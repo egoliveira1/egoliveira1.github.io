@@ -619,7 +619,21 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 							</ul>
 						</div>
 					</section>
-
+					<p class="contador">
+						Visitas: <span id="contador">carregando...</span>
+					</p>
+					  <script>
+						// Substitua 'meusite123' por algo único, se quiser
+						fetch('https://api.countapi.xyz/hit/egoliveira1/visitas')
+						  .then(response => response.json())
+						  .then(data => {
+							document.getElementById('contador').textContent = data.value;
+						  })
+						  .catch(error => {
+							console.error('Erro ao acessar CountAPI:', error);
+							document.getElementById('contador').textContent = "erro";
+						  });
+					  </script>
 			</div>
 
 		<!-- Scripts -->
